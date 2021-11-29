@@ -15,6 +15,7 @@ namespace XML_Editor
             //if the passed node is null, return an empty string
             if (node == null) return output;
             //base case for recursive function
+            //if it has no children, then it's just data (not a tag), so return it
             if (node.getChildren().Count() == 0) return output += node.getData();
 
             //recursive case
