@@ -10,13 +10,7 @@ namespace XML_Editor
     {
         string Minifying(string str)
         {
-            string output = "";
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (str[i] == ' ' || str[i] == '\n') continue;
-                else output += str[i];
-            }
-            return output;
+            return str.Replace("\n", "").Replace("\r", "").Replace(" ", "");
         }
     }
 }
