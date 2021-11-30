@@ -41,6 +41,32 @@ namespace XML_Editor
             children.Append(child_node);
         }
 
+        /* SETTERS */
+        public void setTag(string tag)
+        {
+            this.tag = tag;
+        }
+        public void setData(string? data)
+        {
+            this.data = data;
+        }
+        public void setParent(Node? parent)
+        {
+            this.parent = parent;
+        }
+        public void setChildren(List<Node> children)
+        {
+            this.children = children;
+        }
+
+        public void setDepth(int depth)
+        {
+            // if depth is less than 0 then it throws an Exception
+            if (depth < 0)
+                throw new ArgumentOutOfRangeException();
+            else
+                this.depth = depth;
+        }
 
         /* GETTERS */
         public Node? getParent()
