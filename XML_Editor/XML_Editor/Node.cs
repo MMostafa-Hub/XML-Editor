@@ -19,17 +19,6 @@ namespace XML_Editor
         private List<Node> children;
         private int depth;
 
-        /* NAIVE Constructor */
-        public Node(string tag, string? data, Node? parent, List<Node> children, int depth)
-        {
-            this.tag = tag;
-            this.data = data;
-            this.parent = parent;
-            this.children = children;
-            this.depth = depth;
-        }
-
-               
         /* construct a CHILD */
         public Node(string tag, string? data, Node parent)
         {
