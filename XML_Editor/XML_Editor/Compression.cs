@@ -32,11 +32,15 @@ namespace XML_Editor
             return output;
         }
 
-        string HuffmanCompression(string s)
+        int[] CharacterFrequencies(string s)
         {
-            string output = "";
-
-            return output;
+            //used to store the frequency of each character. XML files use UTF-8 encoding which has 1,112,064 different characters
+            int[] frequencyArray = new int[1112064];
+            for (int i = 0; i < frequencyArray.Length; i++)
+            {
+                frequencyArray[s[i]]++;
+            }
+            return frequencyArray;
         }
     }
 
