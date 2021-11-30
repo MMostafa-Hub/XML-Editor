@@ -23,9 +23,10 @@ namespace XML_Editor
                         int close = findChar(s, open + 1, '>');
                         string str = s.Substring(open + 1, close - open - 1);//without <>
                         st.Push(str);
-                        output += s.Substring(index, close - index+1);
+                        output += s.Substring(index, close - index + 1);
                         index = close;
                         index++;
+                        // Console.WriteLine(output);
                         continue;
                     }
                     else
@@ -49,6 +50,8 @@ namespace XML_Editor
                         }
                         index = close;
                         index++;
+                        //Console.WriteLine(output);
+
                         continue;
                     }
                 }
@@ -56,9 +59,11 @@ namespace XML_Editor
                 { //data
                     int open = findChar(s, index, '<');
                     int length = open - index;
-                    output += s.Substring(index);
+                    output += s.Substring(index, length);
                     index = open - 1;
                     index++;
+                    //Console.WriteLine(output);
+
                     continue;
                 }
 
