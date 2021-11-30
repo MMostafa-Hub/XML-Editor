@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zezo\\Desktop\\Project\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj": {}
+    "G:\\ASU\\CSE-3\\DS\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zezo\\Desktop\\Project\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj": {
+    "G:\\ASU\\CSE-3\\DS\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zezo\\Desktop\\Project\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj",
+        "projectUniqueName": "G:\\ASU\\CSE-3\\DS\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj",
         "projectName": "XML_Editor",
-        "projectPath": "C:\\Users\\Zezo\\Desktop\\Project\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj",
-        "packagesPath": "C:\\Users\\Zezo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zezo\\Desktop\\Project\\XML-Editor\\XML_Editor\\XML_Editor\\obj\\",
+        "projectPath": "G:\\ASU\\CSE-3\\DS\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "G:\\ASU\\CSE-3\\DS\\XML-Editor\\XML_Editor\\XML_Editor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Zezo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
