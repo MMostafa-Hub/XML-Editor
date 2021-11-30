@@ -26,53 +26,78 @@ namespace XML_Editor
                         output += s.Substring(index, close - index + 1);
                         index = close;
                         index++;
-                        // Console.WriteLine(output);
                         continue;
                     }
+
                     else
                     { //closing tag
                         int slash = findChar(s, index, '/');
                         int close = findChar(s, index, '>');
                         string str = s.Substring(slash + 1, close - slash - 1);
                         if (str == st.Peek())
-                        {
+                        { //no error
                             output += "<" + "/" + st.Peek() + ">";
                             st.Pop();
                         }
                         else
-                        {
+                        { //error
                             while (str != st.Peek())
                             {
-                                output += "<" + "/" + st.Peek() + ">";
+                                output += "<" + "/" + st.Peek() + ">" + "\n";
                                 st.Pop();
                             }
                             st.Pop();
+
                         }
                         index = close;
                         index++;
-                        //Console.WriteLine(output);
-
                         continue;
                     }
                 }
-                if (s[index] != '<')
+
+                if (s[index] != '<' && s[index] != '\n')
                 { //data
                     int open = findChar(s, index, '<');
                     int length = open - index;
                     output += s.Substring(index, length);
                     index = open - 1;
                     index++;
-                    //Console.WriteLine(output);
-
+                    string check = st.Peek();
+                    int start = findChar(s, index, '<');
+                    if (check == s.Substring(start + 2, st.Peek().Length))
+                    {
+                        output += "</" + st.Peek() + ">";
+                        index = index + st.Peek().Length + 3;
+                        st.Pop();
+                    }
+                    else
+                    {
+                        output += "</" + st.Peek() + ">" + "\n";
+                        st.Pop();
+                    }
                     continue;
+                }
+                if (s[index] == '\n')
+                {
+                    output += "\n";
+                    index++;
+                }
+                if (s[index] == '\r')
+                {
+                    output += "\r";
+                    index++;
                 }
 
             }
-            while (st.Count != 0)
+            if (st.Count != 0)
             {
-                output += "</" + st.Peek() + ">";
-                st.Pop();
+                while (st.Count != 0)
+                {
+                    output += "</" + st.Peek() + ">";
+                    st.Pop();
+                }
             }
+
             return output;
         }
         static int findChar(string s,int index,char a) {

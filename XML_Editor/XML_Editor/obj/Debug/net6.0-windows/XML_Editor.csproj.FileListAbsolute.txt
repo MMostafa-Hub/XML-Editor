@@ -1,0 +1,17 @@
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\bin\Debug\net6.0-windows\XML_Editor.exe
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\bin\Debug\net6.0-windows\XML_Editor.deps.json
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\bin\Debug\net6.0-windows\XML_Editor.runtimeconfig.json
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\bin\Debug\net6.0-windows\XML_Editor.dll
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\bin\Debug\net6.0-windows\ref\XML_Editor.dll
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\bin\Debug\net6.0-windows\XML_Editor.pdb
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.csproj.AssemblyReference.cache
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.Form1.resources
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.csproj.GenerateResource.cache
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.AssemblyInfoInputs.cache
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.AssemblyInfo.cs
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.csproj.CoreCompileInputs.cache
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.dll
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\ref\XML_Editor.dll
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.pdb
+C:\Users\Zezo\Desktop\Project\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.genruntimeconfig.cache
