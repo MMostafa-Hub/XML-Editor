@@ -52,14 +52,32 @@ namespace XML_Editor
             }
             return heap;
         }
+
+        HuffmanNode CreateHuffmanTree(PriorityQueue<HuffmanNode, int> heap)
+        {
+            HuffmanNode root = new HuffmanNode();
+            while (heap.Count > 1)
+            {
+                HuffmanNode x = heap.Dequeue();
+                HuffmanNode y = heap.Dequeue();
+                HuffmanNode f = new HuffmanNode();
+                f.setFreq(x.GetFreq() + y.GetFreq());
+                f.leftNode = x;
+                f.rightNode = y;
+                root = f;
+                heap.Enqueue(f, f.GetFreq());
+            }
+
+            return root;
+        }
     }
 
     internal class HuffmanNode
     {
-        private char c;
+        private char? c;
         private int freq;
-        HuffmanNode? leftNode;
-        HuffmanNode? rightNode;
+        public HuffmanNode? leftNode;
+        public HuffmanNode? rightNode;
 
         public HuffmanNode()
         {
@@ -72,6 +90,25 @@ namespace XML_Editor
             this.freq = freq;
             leftNode = null;
             rightNode = null;
+        }
+        public char? GetC()
+        {
+            return c;
+        }
+
+        public int GetFreq()
+        {
+            return freq;
+        }
+
+        public void setC(char c)
+        {
+            this.c = c;
+        }
+
+        public void setFreq(int freq)
+        {
+            this.freq= freq;
         }
     }
 }
