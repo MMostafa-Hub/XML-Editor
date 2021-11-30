@@ -31,5 +31,20 @@ namespace XML_Editor
             output += "</" + node.getTag() + ">";
             return output;
         }
+
+        string HuffmanCompression(string s)
+        {
+            string output = "";
+
+            return output;
+        }
+    }
+
+    internal class HuffmanNode
+    {
+        private char c;
+        private int freq;
+        HuffmanNode leftNode;
+        HuffmanNode rightNode;
     }
 }
