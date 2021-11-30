@@ -19,16 +19,6 @@ namespace XML_Editor
         private List<Node> children;
         private int depth;
 
-        /* construct a ROOT */
-        public Node(string tag, string? data)
-        {
-            this.tag = tag;
-            this.data = data;
-            this.parent = null;
-            this.depth = 0;
-            this.children = new List<Node>();
-        }
-
         /* Appends a node into the children list */
         public void addChild(Node child_node)
         {
