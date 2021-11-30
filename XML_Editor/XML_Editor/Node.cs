@@ -25,14 +25,19 @@ namespace XML_Editor
             this.tag = tag;
             this.data = data;
             this.parent = null;
-            this.depth = 0;    
-            this.children = new List<Node>();  
+            this.depth = 0;
+            this.children = new List<Node>();
         }
 
 
         /* Appends a node into the children list */
         public void addChild(Node child_node)
         {
+            // giving the child a parent
+            child_node.parent = this;
+            // the depth of the child_node is more than the parent's by 1
+            child_node.depth = this.depth + 1;
+            // giving the parent a child
             children.Append(child_node);
         }
 
