@@ -32,9 +32,11 @@ namespace XML_Editor
             return output;
         }
 
-        //This function returns a frequency array of the characters in the given string
-        int[] CharacterFrequencies(string s)
+        //This function returns a priority queue of the characters in the string and their frequencies
+        PriorityQueue<char,int> CharacterFrequencies(string s)
         {
+            //the priority queue to be returned
+            PriorityQueue<char,int> heap = new PriorityQueue<char,int>();
             //used to store the frequency of each character. XML files use UTF-8 encoding which has 1,112,064 different characters
             int[] frequencyArray = new int[1112064];
             //loop on every character in the string
@@ -43,7 +45,12 @@ namespace XML_Editor
                 //increment the frequency of this character in the array
                 frequencyArray[s[i]]++;
             }
-            return frequencyArray;
+            for (int i = 0; i < frequencyArray.Length; i++)
+            {
+                //add character to queue if it occurred at least once in the string
+                if (frequencyArray[i] != 0) heap.Enqueue((char)i, frequencyArray[i]);
+            }
+            return heap;
         }
     }
 
