@@ -16,7 +16,7 @@ namespace XML_Editor
             if (node == null) return output;
             //base case for recursive function
             //if it has no children, then it's just data (not a tag), so return it
-            if (node.getChildren().Count() == 0) return output += node.getData();
+            if (node.getChildren().Count() == 0) return output += "<" + node.getTag() + ">" + node.getData() + "</" + node.getTag() + ">";
 
             //recursive case
             //since it passed the base case, then it has children. So, it is an opening tag
