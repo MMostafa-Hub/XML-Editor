@@ -19,18 +19,6 @@ namespace XML_Editor
         private List<Node> children;
         private int depth;
 
-        /* construct a CHILD */
-        public Node(string tag, string? data, Node parent)
-        {
-            this.tag = tag;
-            this.data = data;
-
-            // IMP: Parent Cannot be NULL 
-            this.parent = parent;
-            this.depth = parent.depth++;
-            this.children = new List<Node>();
-        }
-
         /* construct a ROOT */
         public Node(string tag, string? data)
         {
