@@ -32,9 +32,11 @@ namespace XML_Editor
             return output;
         }
 
-        //This function returns a frequency array of the characters in the given string
-        int[] CharacterFrequencies(string s)
+        //This function returns a priority queue of HuffmanNodes of the characters in the string and their frequencies
+        PriorityQueue<HuffmanNode,int> CharacterFrequencies(string s)
         {
+            //the priority queue to be returned
+            PriorityQueue<HuffmanNode,int> heap = new PriorityQueue<HuffmanNode,int>();
             //used to store the frequency of each character. XML files use UTF-8 encoding which has 1,112,064 different characters
             int[] frequencyArray = new int[1112064];
             //loop on every character in the string
@@ -43,15 +45,70 @@ namespace XML_Editor
                 //increment the frequency of this character in the array
                 frequencyArray[s[i]]++;
             }
-            return frequencyArray;
+            for (int i = 0; i < frequencyArray.Length; i++)
+            {
+                //add character's HuffmanNode to queue if it occurred at least once in the string
+                if (frequencyArray[i] != 0) heap.Enqueue(new HuffmanNode((char)i, frequencyArray[i]), frequencyArray[i]);
+            }
+            return heap;
+        }
+
+        HuffmanNode CreateHuffmanTree(PriorityQueue<HuffmanNode, int> heap)
+        {
+            HuffmanNode root = new HuffmanNode();
+            while (heap.Count > 1)
+            {
+                HuffmanNode x = heap.Dequeue();
+                HuffmanNode y = heap.Dequeue();
+                HuffmanNode f = new HuffmanNode();
+                f.setFreq(x.GetFreq() + y.GetFreq());
+                f.leftNode = x;
+                f.rightNode = y;
+                root = f;
+                heap.Enqueue(f, f.GetFreq());
+            }
+
+            return root;
         }
     }
 
     internal class HuffmanNode
     {
-        private char c;
+        private char? c;
         private int freq;
-        HuffmanNode leftNode;
-        HuffmanNode rightNode;
+        public HuffmanNode? leftNode;
+        public HuffmanNode? rightNode;
+
+        public HuffmanNode()
+        {
+            
+        }
+
+        public HuffmanNode(char c, int freq)
+        {
+            this.c = c;
+            this.freq = freq;
+            leftNode = null;
+            rightNode = null;
+        }
+        public char? GetC()
+        {
+            return c;
+        }
+
+        public int GetFreq()
+        {
+            return freq;
+        }
+
+        public void setC(char c)
+        {
+            this.c = c;
+        }
+
+        public void setFreq(int freq)
+        {
+            this.freq= freq;
+        }
     }
 }

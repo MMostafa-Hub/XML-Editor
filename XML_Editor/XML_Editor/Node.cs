@@ -19,30 +19,7 @@ namespace XML_Editor
         private List<Node> children;
         private int depth;
 
-        /* NAIVE Constructor */
-        public Node(string tag, string? data, Node? parent, List<Node> children, int depth)
-        {
-            this.tag = tag;
-            this.data = data;
-            this.parent = parent;
-            this.children = children;
-            this.depth = depth;
-        }
-
-               
-        /* construct a CHILD */
-        public Node(string tag, string? data, Node parent)
-        {
-            this.tag = tag;
-            this.data = data;
-
-            // IMP: Parent Cannot be NULL 
-            this.parent = parent;
-            this.depth = parent.depth++;
-            this.children = new List<Node>();
-        }
-
-        /* construct a ROOT */
+        /* Construct a NODE */
         public Node(string tag, string? data)
         {
             this.tag = tag;
@@ -52,9 +29,15 @@ namespace XML_Editor
             this.children = new List<Node>();
         }
 
+
         /* Appends a node into the children list */
         public void addChild(Node child_node)
         {
+            // giving the child a parent
+            child_node.parent = this;
+            // the depth of the child_node is more than the parent's by 1
+            child_node.depth = this.depth + 1;
+            // giving the parent a child
             children.Append(child_node);
         }
 
