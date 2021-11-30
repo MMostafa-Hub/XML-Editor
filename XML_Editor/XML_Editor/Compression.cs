@@ -52,6 +52,8 @@ namespace XML_Editor
             }
             return heap;
         }
+
+
     }
 
     internal class HuffmanNode
@@ -60,5 +62,13 @@ namespace XML_Editor
         private int freq;
         HuffmanNode leftNode;
         HuffmanNode rightNode;
+
+        HuffmanNode(char c, int freq)
+        {
+            this.c = c;
+            this.freq = freq;
+            leftNode = null;
+            rightNode = null;
+        }
     }
 }
