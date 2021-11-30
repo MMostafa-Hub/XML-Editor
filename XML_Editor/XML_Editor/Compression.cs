@@ -32,12 +32,15 @@ namespace XML_Editor
             return output;
         }
 
+        //This function returns a frequency array of the characters in the given string
         int[] CharacterFrequencies(string s)
         {
             //used to store the frequency of each character. XML files use UTF-8 encoding which has 1,112,064 different characters
             int[] frequencyArray = new int[1112064];
-            for (int i = 0; i < frequencyArray.Length; i++)
+            //loop on every character in the string
+            for (int i = 0; i < s.Length; i++)
             {
+                //increment the frequency of this character in the array
                 frequencyArray[s[i]]++;
             }
             return frequencyArray;
