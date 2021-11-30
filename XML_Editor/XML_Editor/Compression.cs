@@ -32,11 +32,11 @@ namespace XML_Editor
             return output;
         }
 
-        //This function returns a priority queue of the characters in the string and their frequencies
-        PriorityQueue<char,int> CharacterFrequencies(string s)
+        //This function returns a priority queue of HuffmanNodes of the characters in the string and their frequencies
+        PriorityQueue<HuffmanNode,int> CharacterFrequencies(string s)
         {
             //the priority queue to be returned
-            PriorityQueue<char,int> heap = new PriorityQueue<char,int>();
+            PriorityQueue<HuffmanNode,int> heap = new PriorityQueue<HuffmanNode,int>();
             //used to store the frequency of each character. XML files use UTF-8 encoding which has 1,112,064 different characters
             int[] frequencyArray = new int[1112064];
             //loop on every character in the string
@@ -47,23 +47,26 @@ namespace XML_Editor
             }
             for (int i = 0; i < frequencyArray.Length; i++)
             {
-                //add character to queue if it occurred at least once in the string
-                if (frequencyArray[i] != 0) heap.Enqueue((char)i, frequencyArray[i]);
+                //add character's HuffmanNode to queue if it occurred at least once in the string
+                if (frequencyArray[i] != 0) heap.Enqueue(new HuffmanNode((char)i, frequencyArray[i]), frequencyArray[i]);
             }
             return heap;
         }
-
-
     }
 
     internal class HuffmanNode
     {
         private char c;
         private int freq;
-        HuffmanNode leftNode;
-        HuffmanNode rightNode;
+        HuffmanNode? leftNode;
+        HuffmanNode? rightNode;
 
-        HuffmanNode(char c, int freq)
+        public HuffmanNode()
+        {
+            
+        }
+
+        public HuffmanNode(char c, int freq)
         {
             this.c = c;
             this.freq = freq;
