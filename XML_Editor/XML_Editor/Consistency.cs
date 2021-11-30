@@ -8,5 +8,8 @@ namespace XML_Editor
 {
     internal class Consistency
     {
+        static string checkConsistency(string s) { 
+            //here to contiune the code
+        }
     }
 }
