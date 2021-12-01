@@ -94,7 +94,7 @@ namespace XML_Editor
         }
 
 
-        string HuffmanDecoding(string input, HuffmanNode root)
+        string HuffmanDecompression(string input, HuffmanNode root)
         {
             string output = "";
             HuffmanNode point = root;
