@@ -38,7 +38,7 @@ namespace XML_Editor
             // the depth of the child_node is more than the parent's by 1
             child_node.depth = this.depth + 1;
             // giving the parent a child
-            children.Append(child_node);
+            children.Add(child_node);
         }
 
         /* SETTERS */
