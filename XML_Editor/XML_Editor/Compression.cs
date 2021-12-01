@@ -93,6 +93,26 @@ namespace XML_Editor
             return output;
         }
 
+        string HuffmanTraverse(char c, HuffmanNode root, string? code = "")
+        {
+            if (root.leftNode == null && root.rightNode == null && c != root.GetC()) return null;
+            if (root.leftNode == null && root.rightNode == null && c == root.GetC()) return code;
+            if (HuffmanTraverse(c, root.leftNode, code + "0") != null) code += HuffmanTraverse(c, root.leftNode);
+            else if (HuffmanTraverse(c, root.rightNode, code + "1") != null) code += HuffmanTraverse(c, root.rightNode);
+            else return null;
+            return code;
+        }
+
+        string HuffmanDecoding(string input, HuffmanNode root)
+        {
+            string output = "";
+            for (int i = 0;i < input.Length;i++)
+            {
+                output += HuffmanTraverse(input[i], root);
+            }
+            return output;
+        }
+
         string HuffmanCompression(string input)
         {
             return HuffmanEncoding(input, CodeArray(CreateHuffmanTree(CharacterFrequencies(input)), new string[1112064]));
