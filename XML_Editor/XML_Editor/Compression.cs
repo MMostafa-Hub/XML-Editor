@@ -75,10 +75,8 @@ namespace XML_Editor
         {
             string[] array = new string[1112064];
             if (root.leftNode == null && root.rightNode == null) array[(int)root.GetC()] = code;
-            code += "0";
-            CodeArray(root.leftNode, code);
-            code.Substring(0, code.Length - 1);
-            CodeArray(root.rightNode, code);
+            CodeArray(root.leftNode, code + "0");
+            CodeArray(root.rightNode, code + "1");
             return array;
         }
     }
