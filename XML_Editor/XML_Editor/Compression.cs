@@ -53,8 +53,9 @@ namespace XML_Editor
             return heap;
         }
 
-        HuffmanNode CreateHuffmanTree(PriorityQueue<HuffmanNode, int> heap)
+        HuffmanNode CreateHuffmanTree(string s)
         {
+            PriorityQueue<HuffmanNode,int> heap = CharacterFrequencies(s);
             HuffmanNode root = new HuffmanNode();
             while (heap.Count > 1)
             {
