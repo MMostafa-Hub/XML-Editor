@@ -12,21 +12,60 @@ namespace XML_Editor
             Stack<string> st = new Stack<string>();
             string output = "";
             int index = 0;
+            bool flagfollower = false;
+            bool flagendtagfollower = false;
             while (index < s.Length)
             {
 
                 if (s[index] == '<')
                 {
                     int open = findChar(s, index, '<');
+
                     if (s[open + 1] != '/')
                     { //openning tag 
+
                         int close = findChar(s, open + 1, '>');
                         string str = s.Substring(open + 1, close - open - 1);//without <>
-                        st.Push(str);
-                        output += s.Substring(index, close - index + 1);
-                        index = close;
-                        index++;
-                        continue;
+                        if (str == "follower")
+                        {
+                            st.Push(str);
+                            output += s.Substring(index, close - index + 1);
+                            index = close;
+                            index++;
+                            flagfollower = true;
+
+                            continue;
+
+                        }
+                        if (flagfollower)
+                        {
+                            if (str == "id")
+                            {
+                                st.Push(str);
+                                output += s.Substring(index, close - index + 1);
+                                index = close;
+                                index++;
+                                flagfollower = false;
+                                continue;
+                            }
+                            else
+                            {
+                                output += "<id>";
+                                index = close;
+                                index++;
+                                flagfollower = false;
+                                flagendtagfollower = true;
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            st.Push(str);
+                            output += s.Substring(index, close - index + 1);
+                            index = close;
+                            index++;
+                            continue;
+                        }
                     }
 
                     else
@@ -70,6 +109,17 @@ namespace XML_Editor
                         index = index + st.Peek().Length + 3;
                         st.Pop();
                     }
+                    else if (flagendtagfollower)
+                    {
+
+                        int openflag = findChar(s, index, '<');
+                        int closeflag = findChar(s, index, '>');
+                        int lengthflag = closeflag - openflag + 1;
+                        index = index + lengthflag;
+                        output += "</id>";
+                        flagendtagfollower = false;
+                        continue;
+                    }
                     else
                     {
                         output += "</" + st.Peek() + ">" + "\n";
@@ -97,7 +147,6 @@ namespace XML_Editor
                     st.Pop();
                 }
             }
-
             return output;
         }
         static int findChar(string s,int index,char a) {
