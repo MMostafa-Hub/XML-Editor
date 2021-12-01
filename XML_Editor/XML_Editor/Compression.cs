@@ -71,12 +71,15 @@ namespace XML_Editor
             return root;
         }
 
-        string[] CodeArray(HuffmanNode root, string code = "")
+        string[] CodeArray(HuffmanNode root, string array[], string code = "")
         {
-            string[] array = new string[1112064];
-            if (root.leftNode == null && root.rightNode == null) array[(int)root.GetC()] = code;
-            CodeArray(root.leftNode, code + "0");
-            CodeArray(root.rightNode, code + "1");
+            if (root.leftNode == null && root.rightNode == null)
+            {
+                array[(int)root.GetC()] = code; 
+                return array;
+            }
+            CodeArray(root.leftNode, array, code + "0");
+            CodeArray(root.rightNode, array, code + "1");
             return array;
         }
 
