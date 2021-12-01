@@ -106,9 +106,16 @@ namespace XML_Editor
         string HuffmanDecoding(string input, HuffmanNode root)
         {
             string output = "";
+            HuffmanNode point = root;
             for (int i = 0;i < input.Length;i++)
             {
-                output += HuffmanTraverse(input[i], root);
+                if (input[i] == '0') point = root.leftNode;
+                else point = root.rightNode;
+                if (point.leftNode == null && point.rightNode == null)
+                {
+                    output += point.GetC();
+                    point = root;
+                }
             }
             return output;
         }
