@@ -79,6 +79,16 @@ namespace XML_Editor
             CodeArray(root.rightNode, code + "1");
             return array;
         }
+
+        string HuffmanEncoding(string input, string[] CodeArray)
+        {
+            string output = "";
+            for (int i = 0; i < input.Length; i++)
+            {
+                output += CodeArray[input[i]];
+            }
+            return output;
+        }
     }
 
     internal class HuffmanNode
