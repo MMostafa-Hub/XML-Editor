@@ -70,6 +70,17 @@ namespace XML_Editor
 
             return root;
         }
+
+        string[] CodeArray(HuffmanNode root, string code = "")
+        {
+            string[] array = new string[1112064];
+            if (root.leftNode == null && root.rightNode == null) array[(int)root.GetC()] = code;
+            code += "0";
+            CodeArray(root.leftNode, code);
+            code.Substring(0, code.Length - 1);
+            CodeArray(root.rightNode, code);
+            return array;
+        }
     }
 
     internal class HuffmanNode
