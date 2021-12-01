@@ -111,9 +111,9 @@ namespace XML_Editor
             return output;
         }
 
-        string HuffmanCompression(string input)
+        string HuffmanCompression(string input, HuffmanNode root)
         {
-            return HuffmanEncoding(input, CodeArray(CreateHuffmanTree(CharacterFrequencies(input)), new string[1112064]));
+            return HuffmanEncoding(input, CodeArray(root, new string[1112064]));
         }
     }
 
