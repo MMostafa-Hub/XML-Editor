@@ -71,7 +71,7 @@ namespace XML_Editor
             return root;
         }
 
-        string[] CodeArray(HuffmanNode root, string array[], string code = "")
+        string[] CodeArray(HuffmanNode root, string[] array, string code = "")
         {
             if (root.leftNode == null && root.rightNode == null)
             {
@@ -91,6 +91,11 @@ namespace XML_Editor
                 output += CodeArray[input[i]];
             }
             return output;
+        }
+
+        string HuffmanCompression(string input)
+        {
+            return HuffmanEncoding(input, CodeArray(CreateHuffmanTree(CharacterFrequencies(input)), new string[1112064]));
         }
     }
 
