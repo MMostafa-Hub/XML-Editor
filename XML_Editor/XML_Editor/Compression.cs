@@ -100,8 +100,8 @@ namespace XML_Editor
             HuffmanNode point = root;
             for (int i = 0;i < input.Length;i++)
             {
-                if (input[i] == '0') point = root.leftNode;
-                else point = root.rightNode;
+                if (input[i] == '0') point = point.leftNode;
+                else point = point.rightNode;
                 if (point.leftNode == null && point.rightNode == null)
                 {
                     output += point.GetC();
