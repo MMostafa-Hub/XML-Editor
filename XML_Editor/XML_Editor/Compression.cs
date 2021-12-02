@@ -100,9 +100,13 @@ namespace XML_Editor
             return array;
         }
 
+        /*This function takes a string and an array that contains the Huffman code for every character, and returns
+         a string corresponding to the full encoding of the input string*/
         private static string HuffmanEncoding(string input, string[] CodeArray)
         {
+            //string to store the encoded string
             string output = "";
+            //for every character in the input string, get its code from the array and add it to the output string
             for (int i = 0; i < input.Length; i++)
             {
                 output += CodeArray[input[i]];
@@ -110,15 +114,22 @@ namespace XML_Editor
             return output;
         }
 
-
+        /*This function takes a string of 1s and 0s and a Huffman tree. The functions uses the tree to decode the string
+         and returns the original string before decoding*/
         public static string HuffmanDecompression(string input, HuffmanNode root)
         {
+            //string to store the decoded string
             string output = "";
+            //pointer to traverse the Huffman tree
             HuffmanNode point = root;
+            //for every bit in the string
             for (int i = 0;i < input.Length;i++)
             {
+                //if the bit is zero, traverse to the left node
                 if (input[i] == '0') point = point.leftNode;
+                //if it's one, traverse to the right node
                 else point = point.rightNode;
+                //if it's a character node, add the character to the output string and point to the root again
                 if (point.leftNode == null && point.rightNode == null)
                 {
                     output += point.GetC();
@@ -128,6 +139,7 @@ namespace XML_Editor
             return output;
         }
 
+        //This function takes a string and a Huffman tree, and returns a Huffman coded string of 0s and 1s
         public static string HuffmanCompression(string input, HuffmanNode root)
         {
             return HuffmanEncoding(input, CodeArray(root, new string[1112064]));
