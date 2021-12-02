@@ -14,9 +14,13 @@ namespace XML_Editor
             int index = 0;
             bool flagfollower = false;
             bool flagendtagfollower = false;
+            Console.WriteLine("----------------");
+            Console.WriteLine("INPUT");
+            Console.WriteLine(s.Substring(index));
+            Console.WriteLine("----------------");
             while (index < s.Length)
             {
-
+               
                 if (s[index] == '<')
                 {
                     int open = findChar(s, index, '<');
@@ -33,7 +37,6 @@ namespace XML_Editor
                             index = close;
                             index++;
                             flagfollower = true;
-
                             continue;
 
                         }
@@ -94,7 +97,7 @@ namespace XML_Editor
                     }
                 }
 
-                if (s[index] != '<' && s[index] != '\n')
+                if (s[index] != '<' && s[index] != '\n' && s[index] != ' ' && s[index] != '\r')
                 { //data
                     int open = findChar(s, index, '<');
                     int length = open - index;
@@ -131,11 +134,20 @@ namespace XML_Editor
                 {
                     output += "\n";
                     index++;
+                    while (s[index] == ' ')
+                    {
+                        output += s[index];
+                        index++;
+                    }
                 }
                 if (s[index] == '\r')
                 {
                     output += "\r";
                     index++;
+                }
+                if (s[index] == ' ')
+                {
+                    output += s[index];
                 }
 
             }
