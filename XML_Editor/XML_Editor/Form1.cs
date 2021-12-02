@@ -33,6 +33,11 @@ namespace XML_Editor
                     output = Consistency.checkConsistency(input);
                     richTextBox2.AppendText(output);
                     root = ParseToTree.ParsingToTree(output);
+                    button2.Enabled = true;
+                    button3.Enabled = true;
+                    button4.Enabled = true;
+                    button5.Enabled = true;
+                    button6.Enabled = true;
                     /*huffmanNode = Compression.CreateHuffmanTree(x);
                     string y = Compression.HuffmanCompression(x, huffmanNode);
                     BitArray bits = new BitArray(y.Length);

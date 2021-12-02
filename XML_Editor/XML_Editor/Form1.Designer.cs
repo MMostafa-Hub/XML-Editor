@@ -45,6 +45,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(28, 114);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(466, 390);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
@@ -53,6 +54,7 @@
             // 
             this.richTextBox2.Location = new System.Drawing.Point(568, 114);
             this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
             this.richTextBox2.Size = new System.Drawing.Size(472, 390);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "";
@@ -87,6 +89,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(196, 24);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 50);
@@ -96,6 +99,7 @@
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(380, 24);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(114, 50);
@@ -105,6 +109,7 @@
             // 
             // button4
             // 
+            this.button4.Enabled = false;
             this.button4.Location = new System.Drawing.Point(568, 24);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(116, 49);
@@ -115,6 +120,7 @@
             // 
             // button5
             // 
+            this.button5.Enabled = false;
             this.button5.Location = new System.Drawing.Point(745, 25);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(126, 49);
@@ -124,6 +130,7 @@
             // 
             // button6
             // 
+            this.button6.Enabled = false;
             this.button6.Location = new System.Drawing.Point(911, 25);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(129, 50);
