@@ -33,7 +33,7 @@ namespace XML_Editor
                 //Closing Tag case
                 if (sample[i] == '<' && sample[i + 1] == '/')
                 {
-                 
+
                     tag = extractClosingTag(sample, ref i);
 
                     if (current.getParent() == null)
@@ -45,7 +45,7 @@ namespace XML_Editor
                     {
                         //We didnt reach end of string so we reference back to the parent to continue adding its children.
                         current = current.getParent();
-                        
+
                     }
 
                 }
@@ -54,7 +54,7 @@ namespace XML_Editor
                 {
 
                     tag = extractOpeningTag(sample, ref i); //extracting tag
-                    Node node = new Node(tag, null); 
+                    Node node = new Node(tag, null);
                     node.setParent(current); //setting parent of the new node 
                     current.addChild(node); //adding the new node into Children of current 
                     current = node; //moving on to point to next node
@@ -66,6 +66,13 @@ namespace XML_Editor
                     string data = extractData(sample, ref i);
                     //Seting Data to our current node while parsing
                     current.setData(data);
+                }
+                //case there is a new line or \r we want to skip all spaces follwoing them
+                else if (sample[i] == '\n' || sample[i] == '\r')
+                {
+                    i++; //index to next character after \n or \r
+                    while (sample[i] == ' ') i++; // skip all spaces
+
                 }
                 else i++;
             }
@@ -96,7 +103,7 @@ namespace XML_Editor
             string data = null;
             int start = i;
             int incrementer = i;//temp variable to keep i not changed
-            while (incrementer < sample.Length && sample[incrementer] != '<' && sample[incrementer] != '\n')
+            while (incrementer < sample.Length && sample[incrementer] != '<' && sample[incrementer] != '\n'&&sample[incrementer]!='\r')
             {
                 incrementer++;
             }
