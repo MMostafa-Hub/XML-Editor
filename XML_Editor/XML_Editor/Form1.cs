@@ -1,8 +1,11 @@
+using System.Collections;
+
 namespace XML_Editor
 {
     public partial class Form1 : Form
     {
         Node root;
+        HuffmanNode huffmanNode;
         public Form1()
         {
             InitializeComponent();
@@ -23,8 +26,8 @@ namespace XML_Editor
                     string x = File.ReadAllText(file);
                     richTextBox1.Clear();
                     richTextBox1.AppendText(x);
-                    /*root = Compression.CreateHuffmanTree(x);
-                    string y = Compression.HuffmanCompression(x, root);
+                    /*huffmanNode = Compression.CreateHuffmanTree(x);
+                    string y = Compression.HuffmanCompression(x, huffmanNode);
                     BitArray bits = new BitArray(y.Length);
                     for (int i = 0; i < y.Length; i++)
                     {
@@ -33,8 +36,8 @@ namespace XML_Editor
                     }
                     byte[] bytes = new byte[(bits.Length - 1) / 8 + 1];
                     bits.CopyTo(bytes, 0);
-                    richTextBox1.AppendText(Compression.HuffmanCompression(x, root));
-                    richTextBox2.AppendText(Compression.HuffmanDecompression(y, root));*/
+                    richTextBox1.AppendText(Compression.HuffmanCompression(x, huffmanNode));
+                    richTextBox2.AppendText(Compression.HuffmanDecompression(y, huffmanNode));*/
                 }
                 catch (IOException)
                 {
