@@ -39,6 +39,30 @@ namespace XML_Editor
             }
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                List<byte> bytes = new List<byte>();
+                using (BinaryReader binReader = new BinaryReader(File.Open(openFileDialog1.FileName, FileMode.Open)))
+                {
+                    while (binReader.BaseStream.Position != binReader.BaseStream.Length)
+                    {
+                        bytes.Add(binReader.ReadByte());
+                    }
+                }
+                BitArray bits = new BitArray(bytes.ToArray());
+                string s = "";
+                for (int i = 0; i < bits.Length; i++)
+                {
+                    if (bits[i] == true) s += "1";
+                    else s += "0";
+                }
+                richTextBox2.Clear();
+                richTextBox2.AppendText(Compression.HuffmanDecompression(s, huffmanNode));
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)

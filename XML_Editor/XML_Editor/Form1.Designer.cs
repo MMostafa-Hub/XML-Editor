@@ -139,6 +139,7 @@
             this.button6.TabIndex = 9;
             this.button6.Text = "Decompress File";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // openFileDialog1
             // 
