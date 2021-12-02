@@ -15,8 +15,28 @@ namespace XML_Editor
         private void button4_Click(object sender, EventArgs e)
         {
             richTextBox2.Clear();
-            output = Compression.Minifying(root);
             richTextBox2.AppendText(output);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            huffmanNode = Compression.CreateHuffmanTree(output);
+            string y = Compression.HuffmanCompression(output, huffmanNode);
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                BitArray bits = new BitArray(y.Length);
+                for (int i = 0; i < y.Length; i++)
+                {
+                    if (y[i] == '0') bits[i] = false;
+                    else bits[i] = true;
+                }
+                byte[] bytes = new byte[(bits.Length - 1) / 8 + 1];
+                bits.CopyTo(bytes, 0);
+                using (BinaryWriter binWriter = new BinaryWriter(File.Create(saveFileDialog1.FileName)))
+                {
+                    binWriter.Write(bytes);
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
