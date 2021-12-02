@@ -8,7 +8,7 @@ namespace XML_Editor
 {
     internal class Compression
     {
-        string Minifying(Node node)
+        public static string Minifying(Node node)
         {
             //string to store the output after removing indentations and whitespaces
             string output = "";
@@ -33,7 +33,7 @@ namespace XML_Editor
         }
 
         //This function returns a priority queue of HuffmanNodes of the characters in the string and their frequencies
-        PriorityQueue<HuffmanNode,int> CharacterFrequencies(string s)
+        private static PriorityQueue<HuffmanNode,int> CharacterFrequencies(string s)
         {
             //the priority queue to be returned
             PriorityQueue<HuffmanNode,int> heap = new PriorityQueue<HuffmanNode,int>();
@@ -53,7 +53,7 @@ namespace XML_Editor
             return heap;
         }
 
-        HuffmanNode CreateHuffmanTree(string s)
+        public static HuffmanNode CreateHuffmanTree(string s)
         {
             PriorityQueue<HuffmanNode,int> heap = CharacterFrequencies(s);
             HuffmanNode root = new HuffmanNode();
@@ -72,7 +72,7 @@ namespace XML_Editor
             return root;
         }
 
-        string[] CodeArray(HuffmanNode root, string[] array, string code = "")
+        private static string[] CodeArray(HuffmanNode root, string[] array, string code = "")
         {
             if (root.leftNode == null && root.rightNode == null)
             {
@@ -84,7 +84,7 @@ namespace XML_Editor
             return array;
         }
 
-        string HuffmanEncoding(string input, string[] CodeArray)
+        private static string HuffmanEncoding(string input, string[] CodeArray)
         {
             string output = "";
             for (int i = 0; i < input.Length; i++)
@@ -95,7 +95,7 @@ namespace XML_Editor
         }
 
 
-        string HuffmanDecompression(string input, HuffmanNode root)
+        public static string HuffmanDecompression(string input, HuffmanNode root)
         {
             string output = "";
             HuffmanNode point = root;
@@ -112,7 +112,7 @@ namespace XML_Editor
             return output;
         }
 
-        string HuffmanCompression(string input, HuffmanNode root)
+        public static string HuffmanCompression(string input, HuffmanNode root)
         {
             return HuffmanEncoding(input, CodeArray(root, new string[1112064]));
         }
