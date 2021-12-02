@@ -82,18 +82,6 @@ namespace XML_Editor
                     button4.Enabled = true;
                     button5.Enabled = true;
                     button6.Enabled = true;
-                    /*huffmanNode = Compression.CreateHuffmanTree(x);
-                    string y = Compression.HuffmanCompression(x, huffmanNode);
-                    BitArray bits = new BitArray(y.Length);
-                    for (int i = 0; i < y.Length; i++)
-                    {
-                        if (y[i] == '0') bits[i] = false;
-                        else bits[i] = true;
-                    }
-                    byte[] bytes = new byte[(bits.Length - 1) / 8 + 1];
-                    bits.CopyTo(bytes, 0);
-                    richTextBox1.AppendText(Compression.HuffmanCompression(x, huffmanNode));
-                    richTextBox2.AppendText(Compression.HuffmanDecompression(y, huffmanNode));*/
                 }
                 catch (IOException)
                 {
