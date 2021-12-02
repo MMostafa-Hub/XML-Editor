@@ -53,33 +53,49 @@ namespace XML_Editor
             return heap;
         }
 
+        //This function takes a string and uses Huffman Algorithm to create a Huffman tree based on the frequency of its characters and returns the root
         public static HuffmanNode CreateHuffmanTree(string s)
         {
+            //heap that holds each character and its frequency
             PriorityQueue<HuffmanNode,int> heap = CharacterFrequencies(s);
+            //create root node
             HuffmanNode root = new HuffmanNode();
             while (heap.Count > 1)
             {
+                //character with least frequency
                 HuffmanNode x = heap.Dequeue();
+                //character with second least frequency
                 HuffmanNode y = heap.Dequeue();
+                //new node that will hold the sum of their frequencies
                 HuffmanNode f = new HuffmanNode();
                 f.setFreq(x.GetFreq() + y.GetFreq());
+                //set the new node's left node to character with least frequency
                 f.leftNode = x;
+                //set the new node's right node to character with second least frequency
                 f.rightNode = y;
+                //set root to be this new node
                 root = f;
+                //add the new node to the heap
                 heap.Enqueue(f, f.GetFreq());
             }
 
             return root;
         }
 
+        /*this function takes a Huffman tree and an array. The function stores the Huffman code of each character in its
+         respective Unicode index*/
         private static string[] CodeArray(HuffmanNode root, string[] array, string code = "")
         {
+            //if the function reached a character node
             if (root.leftNode == null && root.rightNode == null)
             {
+                //put its code in its corresponding index
                 array[(int)root.GetC()] = code; 
                 return array;
             }
+            //go to left node and add '0' to the code
             CodeArray(root.leftNode, array, code + "0");
+            //go to right node and add '1' to the code
             CodeArray(root.rightNode, array, code + "1");
             return array;
         }
