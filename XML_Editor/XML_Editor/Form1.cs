@@ -6,6 +6,7 @@ namespace XML_Editor
     {
         Node root;
         HuffmanNode huffmanNode;
+        string input, output;
         public Form1()
         {
             InitializeComponent();
@@ -23,9 +24,12 @@ namespace XML_Editor
                 string file = openFileDialog1.FileName;
                 try
                 {
-                    string x = File.ReadAllText(file);
+                    input = File.ReadAllText(file);
                     richTextBox1.Clear();
-                    richTextBox1.AppendText(x);
+                    richTextBox1.AppendText(input);
+                    richTextBox2.Clear();
+                    output = Consistency.checkConsistency(input);
+                    richTextBox2.AppendText(output);
                     /*huffmanNode = Compression.CreateHuffmanTree(x);
                     string y = Compression.HuffmanCompression(x, huffmanNode);
                     BitArray bits = new BitArray(y.Length);
