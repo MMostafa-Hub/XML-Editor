@@ -6,5 +6,10 @@ namespace XML_Editor
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
