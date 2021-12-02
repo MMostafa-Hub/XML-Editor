@@ -14,7 +14,9 @@ namespace XML_Editor
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            richTextBox2.Clear();
+            output = Compression.Minifying(root);
+            richTextBox2.AppendText(output);
         }
 
         private void button1_Click(object sender, EventArgs e)
