@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,45 +47,48 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(28, 114);
+            this.richTextBox1.Location = new System.Drawing.Point(24, 86);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(557, 449);
+            this.richTextBox1.Size = new System.Drawing.Size(488, 338);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(655, 114);
+            this.richTextBox2.Location = new System.Drawing.Point(573, 86);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(598, 449);
+            this.richTextBox2.Size = new System.Drawing.Size(524, 338);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 91);
+            this.label1.Location = new System.Drawing.Point(24, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 20);
+            this.label1.Size = new System.Drawing.Size(35, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Input";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(655, 91);
+            this.label2.Location = new System.Drawing.Point(573, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 20);
+            this.label2.Size = new System.Drawing.Size(45, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Output";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(31, 25);
+            this.button1.Location = new System.Drawing.Point(27, 19);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 49);
+            this.button1.Size = new System.Drawing.Size(107, 37);
             this.button1.TabIndex = 4;
             this.button1.Text = "Browse Files";
             this.button1.UseVisualStyleBackColor = true;
@@ -93,9 +97,10 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(655, 24);
+            this.button2.Location = new System.Drawing.Point(573, 18);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 50);
+            this.button2.Size = new System.Drawing.Size(103, 38);
             this.button2.TabIndex = 5;
             this.button2.Text = "Prettify";
             this.button2.UseVisualStyleBackColor = true;
@@ -104,9 +109,10 @@
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(916, 24);
+            this.button3.Location = new System.Drawing.Point(802, 18);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 50);
+            this.button3.Size = new System.Drawing.Size(100, 38);
             this.button3.TabIndex = 6;
             this.button3.Text = "To JSON";
             this.button3.UseVisualStyleBackColor = true;
@@ -115,9 +121,10 @@
             // button4
             // 
             this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(1137, 25);
+            this.button4.Location = new System.Drawing.Point(995, 19);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(116, 49);
+            this.button4.Size = new System.Drawing.Size(102, 37);
             this.button4.TabIndex = 7;
             this.button4.Text = "Minify";
             this.button4.UseVisualStyleBackColor = true;
@@ -126,9 +133,10 @@
             // button5
             // 
             this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(1269, 299);
+            this.button5.Location = new System.Drawing.Point(1110, 224);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(126, 50);
+            this.button5.Size = new System.Drawing.Size(110, 38);
             this.button5.TabIndex = 8;
             this.button5.Text = "Compress output and save";
             this.button5.UseVisualStyleBackColor = true;
@@ -137,9 +145,10 @@
             // button6
             // 
             this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(1269, 382);
+            this.button6.Location = new System.Drawing.Point(1110, 286);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(126, 50);
+            this.button6.Size = new System.Drawing.Size(110, 38);
             this.button6.TabIndex = 9;
             this.button6.Text = "Decompress file";
             this.button6.UseVisualStyleBackColor = true;
@@ -153,9 +162,10 @@
             // button7
             // 
             this.button7.Enabled = false;
-            this.button7.Location = new System.Drawing.Point(1269, 221);
+            this.button7.Location = new System.Drawing.Point(1110, 166);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(126, 50);
+            this.button7.Size = new System.Drawing.Size(110, 38);
             this.button7.TabIndex = 10;
             this.button7.Text = "Save output";
             this.button7.UseVisualStyleBackColor = true;
@@ -167,9 +177,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1410, 597);
+            this.ClientSize = new System.Drawing.Size(1234, 448);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -181,6 +191,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "XML Editor";
             this.ResumeLayout(false);
