@@ -63,6 +63,12 @@ namespace XML_Editor
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            richTextBox2.Clear();
+            richTextBox2.AppendText(Prettify.prettify(root));
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
