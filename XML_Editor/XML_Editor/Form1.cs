@@ -43,10 +43,10 @@ namespace XML_Editor
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
             {
                 List<byte> bytes = new List<byte>();
-                using (BinaryReader binReader = new BinaryReader(File.Open(openFileDialog1.FileName, FileMode.Open)))
+                using (BinaryReader binReader = new BinaryReader(File.Open(openFileDialog2.FileName, FileMode.Open)))
                 {
                     while (binReader.BaseStream.Position != binReader.BaseStream.Length)
                     {
