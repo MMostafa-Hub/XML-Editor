@@ -40,6 +40,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -47,16 +48,16 @@
             this.richTextBox1.Location = new System.Drawing.Point(28, 114);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(466, 390);
+            this.richTextBox1.Size = new System.Drawing.Size(557, 449);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(568, 114);
+            this.richTextBox2.Location = new System.Drawing.Point(655, 114);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(472, 390);
+            this.richTextBox2.Size = new System.Drawing.Size(598, 449);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "";
             // 
@@ -72,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(568, 91);
+            this.label2.Location = new System.Drawing.Point(655, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 3;
@@ -91,7 +92,7 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(196, 24);
+            this.button2.Location = new System.Drawing.Point(655, 24);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 50);
             this.button2.TabIndex = 5;
@@ -102,7 +103,7 @@
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(380, 24);
+            this.button3.Location = new System.Drawing.Point(916, 24);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(114, 50);
             this.button3.TabIndex = 6;
@@ -113,7 +114,7 @@
             // button4
             // 
             this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(568, 24);
+            this.button4.Location = new System.Drawing.Point(1137, 25);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(116, 49);
             this.button4.TabIndex = 7;
@@ -124,22 +125,22 @@
             // button5
             // 
             this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(745, 25);
+            this.button5.Location = new System.Drawing.Point(1269, 299);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(126, 49);
+            this.button5.Size = new System.Drawing.Size(126, 50);
             this.button5.TabIndex = 8;
-            this.button5.Text = "Compress and Save as";
+            this.button5.Text = "Compress output and save";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
             this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(911, 25);
+            this.button6.Location = new System.Drawing.Point(1269, 382);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(129, 50);
+            this.button6.Size = new System.Drawing.Size(126, 50);
             this.button6.TabIndex = 9;
-            this.button6.Text = "Decompress File";
+            this.button6.Text = "Decompress file";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -148,11 +149,22 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "XML Document (.xml)|*.xml";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1269, 221);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(126, 50);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "Save output";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 541);
+            this.ClientSize = new System.Drawing.Size(1410, 597);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -184,5 +196,6 @@
         private Button button6;
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
+        private Button button7;
     }
 }

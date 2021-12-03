@@ -14,14 +14,16 @@ namespace XML_Editor
 
         private void button4_Click(object sender, EventArgs e)
         {
+            richTextBox1.Clear();
+            richTextBox1.AppendText(output);
             richTextBox2.Clear();
             richTextBox2.AppendText(Compression.Minifying(root));
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            huffmanNode = Compression.CreateHuffmanTree(output);
-            string y = Compression.HuffmanCompression(output, huffmanNode);
+            huffmanNode = Compression.CreateHuffmanTree(richTextBox2.Text);
+            string y = Compression.HuffmanCompression(richTextBox2.Text, huffmanNode);
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 BitArray bits = new BitArray(y.Length);
@@ -58,6 +60,8 @@ namespace XML_Editor
                     if (bits[i] == true) s += "1";
                     else s += "0";
                 }
+                richTextBox1.Clear();
+                richTextBox1.AppendText(output);
                 richTextBox2.Clear();
                 richTextBox2.AppendText(Compression.HuffmanDecompression(s, huffmanNode));
             }
@@ -65,14 +69,26 @@ namespace XML_Editor
 
         private void button2_Click(object sender, EventArgs e)
         {
+            richTextBox1.Clear();
+            richTextBox1.AppendText(output);
             richTextBox2.Clear();
             richTextBox2.AppendText(Prettify.prettify(root));
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            richTextBox1.Clear();
+            richTextBox1.AppendText(output);
             richTextBox2.Clear();
             richTextBox2.AppendText("{\n" + XMLToJSON.convertToJSON(root) + "\n}");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFileDialog1.FileName, richTextBox2.Text);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
