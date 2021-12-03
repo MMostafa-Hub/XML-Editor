@@ -110,6 +110,7 @@ namespace XML_Editor
                     button4.Enabled = true;
                     button5.Enabled = true;
                     button6.Enabled = true;
+                    button7.Enabled = true;
                 }
                 catch (IOException)
                 {

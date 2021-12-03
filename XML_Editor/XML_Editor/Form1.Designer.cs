@@ -151,6 +151,7 @@
             // 
             // button7
             // 
+            this.button7.Enabled = false;
             this.button7.Location = new System.Drawing.Point(1269, 221);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(126, 50);

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\E_But_FAST\\SENIOR_1\\CSE331_DSA_Drive\\PROJECT\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj": {}
+    "G:\\ASU\\CSE-3\\DS\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj": {}
   },
   "projects": {
-    "C:\\E_But_FAST\\SENIOR_1\\CSE331_DSA_Drive\\PROJECT\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj": {
+    "G:\\ASU\\CSE-3\\DS\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\E_But_FAST\\SENIOR_1\\CSE331_DSA_Drive\\PROJECT\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj",
+        "projectUniqueName": "G:\\ASU\\CSE-3\\DS\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj",
         "projectName": "XML_Editor",
-        "projectPath": "C:\\E_But_FAST\\SENIOR_1\\CSE331_DSA_Drive\\PROJECT\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj",
-        "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-        "outputPath": "C:\\E_But_FAST\\SENIOR_1\\CSE331_DSA_Drive\\PROJECT\\XML-Editor\\XML_Editor\\XML_Editor\\obj\\",
+        "projectPath": "G:\\ASU\\CSE-3\\DS\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "G:\\ASU\\CSE-3\\DS\\XML-Editor\\XML_Editor\\XML_Editor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
