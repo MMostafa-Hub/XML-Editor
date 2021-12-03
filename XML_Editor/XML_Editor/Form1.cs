@@ -72,7 +72,7 @@ namespace XML_Editor
         private void button3_Click(object sender, EventArgs e)
         {
             richTextBox2.Clear();
-            richTextBox2.AppendText(XMLToJSON.convertToJSON(root));
+            richTextBox2.AppendText("{\n" + XMLToJSON.convertToJSON(root) + "\n}");
         }
 
         private void button1_Click(object sender, EventArgs e)
