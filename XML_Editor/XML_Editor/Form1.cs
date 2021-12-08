@@ -7,6 +7,7 @@ namespace XML_Editor
         Node root;
         HuffmanNode huffmanNode;
         string input, output;
+        bool json = false;
         public Form1()
         {
             InitializeComponent();
@@ -14,6 +15,7 @@ namespace XML_Editor
 
         private void button4_Click(object sender, EventArgs e)
         {
+            json = false;
             richTextBox1.Clear();
             richTextBox1.AppendText(output);
             richTextBox2.Clear();
@@ -22,6 +24,7 @@ namespace XML_Editor
 
         private void button5_Click(object sender, EventArgs e)
         {
+            saveFileDialog1.Filter = "Text Files (.txt)| *.txt";
             huffmanNode = Compression.CreateHuffmanTree(richTextBox2.Text);
             string y = Compression.HuffmanCompression(richTextBox2.Text, huffmanNode);
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -69,6 +72,7 @@ namespace XML_Editor
 
         private void button2_Click(object sender, EventArgs e)
         {
+            json = false;
             richTextBox1.Clear();
             richTextBox1.AppendText(output);
             richTextBox2.Clear();
@@ -77,6 +81,7 @@ namespace XML_Editor
 
         private void button3_Click(object sender, EventArgs e)
         {
+            json = true;
             richTextBox1.Clear();
             richTextBox1.AppendText(output);
             richTextBox2.Clear();
@@ -85,6 +90,8 @@ namespace XML_Editor
 
         private void button7_Click(object sender, EventArgs e)
         {
+            if (json) saveFileDialog1.Filter = "Json files (*.json)|*.json";
+            else saveFileDialog1.Filter = "XML Document (.xml)|*.xml";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 File.WriteAllText(saveFileDialog1.FileName, richTextBox2.Text);
@@ -93,6 +100,7 @@ namespace XML_Editor
 
         private void button1_Click(object sender, EventArgs e)
         {
+            json = false;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string file = openFileDialog1.FileName;
