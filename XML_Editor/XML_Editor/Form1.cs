@@ -112,7 +112,7 @@ namespace XML_Editor
                     richTextBox1.Clear();
                     richTextBox1.AppendText(input);
                     richTextBox2.Clear();
-                    output = Consistency.checkConsistency(input, errors);
+                    output = Consistency.checkConsistency(input, ref errors);
                     richTextBox2.AppendText(output);
                     root = ParseToTree.ParsingToTree(output);
                     button2.Enabled = true;
