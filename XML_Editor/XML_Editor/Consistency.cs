@@ -8,23 +8,19 @@ namespace XML_Editor
 {
     internal class Consistency
     {
-        public static string checkConsistency(string s, int errors) {
+        static string checkConsistency(string s, int errors)
+        {
             Stack<string> st = new Stack<string>();
             string output = "";
             int index = 0;
+            errors = 0;
             bool flagfollower = false;
             bool flagendtagfollower = false;
-            Console.WriteLine("----------------");
-            Console.WriteLine("INPUT");
-            Console.WriteLine(s.Substring(index));
-            Console.WriteLine("----------------");
             while (index < s.Length)
             {
-               
                 if (s[index] == '<')
                 {
                     int open = findChar(s, index, '<');
-
                     if (s[open + 1] != '/')
                     { //openning tag 
 
@@ -58,6 +54,7 @@ namespace XML_Editor
                                 index++;
                                 flagfollower = false;
                                 flagendtagfollower = true;
+                                errors++;
                                 continue;
                             }
                         }
@@ -87,6 +84,7 @@ namespace XML_Editor
                             {
                                 output += "<" + "/" + st.Peek() + ">" + "\n";
                                 st.Pop();
+                                errors++;
                             }
                             st.Pop();
 
@@ -127,6 +125,7 @@ namespace XML_Editor
                     {
                         output += "</" + st.Peek() + ">" + "\n";
                         st.Pop();
+                        errors++;
                     }
                     continue;
                 }
@@ -159,7 +158,9 @@ namespace XML_Editor
                     st.Pop();
                 }
             }
+            
             return output;
+
         }
         static int findChar(string s,int index,char a) {
             for (int i = index; i < s.Length; i++) {
