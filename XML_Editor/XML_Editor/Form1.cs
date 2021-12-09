@@ -8,6 +8,7 @@ namespace XML_Editor
         HuffmanNode huffmanNode;
         string input, output;
         bool json = false;
+        int errors = 0;
         public Form1()
         {
             InitializeComponent();
@@ -101,6 +102,7 @@ namespace XML_Editor
         private void button1_Click(object sender, EventArgs e)
         {
             json = false;
+            errors = 0;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string file = openFileDialog1.FileName;
@@ -110,7 +112,7 @@ namespace XML_Editor
                     richTextBox1.Clear();
                     richTextBox1.AppendText(input);
                     richTextBox2.Clear();
-                    output = Consistency.checkConsistency(input);
+                    output = Consistency.checkConsistency(input, errors);
                     richTextBox2.AppendText(output);
                     root = ParseToTree.ParsingToTree(output);
                     button2.Enabled = true;

@@ -8,7 +8,7 @@ namespace XML_Editor
 {
     internal class Consistency
     {
-        public static string checkConsistency(string s) {
+        public static string checkConsistency(string s, int errors) {
             Stack<string> st = new Stack<string>();
             string output = "";
             int index = 0;
