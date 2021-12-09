@@ -125,6 +125,9 @@ namespace XML_Editor
                 catch (IOException)
                 {
                 }
+                if (errors > 0) label3.Text = errors + " errors were detected and corrected";
+                else label3.Text = "File imported successfully";
+                label3.Visible = true;
             }
         }
     }
