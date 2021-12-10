@@ -86,6 +86,7 @@ namespace XML_Editor
                                 st.Pop();
                                 errors++;
                             }
+                            output += "<" + "/" + st.Peek() + ">" + "\n";
                             st.Pop();
 
                         }
@@ -158,7 +159,6 @@ namespace XML_Editor
                     st.Pop();
                 }
             }
-            
             return output;
 
         }
