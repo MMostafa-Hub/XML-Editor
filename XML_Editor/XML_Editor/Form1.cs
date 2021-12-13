@@ -26,10 +26,10 @@ namespace XML_Editor
         private void button5_Click(object sender, EventArgs e)
         {
             saveFileDialog1.Filter = "Text Files (.txt)| *.txt";
-            huffmanNode = Compression.CreateHuffmanTree(richTextBox2.Text);
-            string y = Compression.HuffmanCompression(richTextBox2.Text, huffmanNode);
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                huffmanNode = Compression.CreateHuffmanTree(richTextBox2.Text);
+                string y = Compression.HuffmanCompression(richTextBox2.Text, huffmanNode);
                 BitArray bits = new BitArray(y.Length);
                 for (int i = 0; i < y.Length; i++)
                 {
@@ -47,6 +47,7 @@ namespace XML_Editor
 
         private void button6_Click(object sender, EventArgs e)
         {
+            string decompressed = "";
             if (openFileDialog2.ShowDialog() == DialogResult.OK)
             {
                 List<byte> bytes = new List<byte>();
@@ -61,11 +62,19 @@ namespace XML_Editor
                 string s = "";
                 for (int i = 0; i < bits.Length; i++)
                 {
-                    if (bits[i] == true) s += "1";
-                    else s += "0";
+                    if (bits[i] == true)
+                    {
+                        s += "1";
+                        decompressed += "1";
+                    }
+                    else 
+                    {
+                        s += "0";
+                        decompressed += "0";
+                    }
                 }
                 richTextBox1.Clear();
-                richTextBox1.AppendText(output);
+                richTextBox1.AppendText(decompressed);
                 richTextBox2.Clear();
                 richTextBox2.AppendText(Compression.HuffmanDecompression(s, huffmanNode));
             }
