@@ -16,6 +16,7 @@ namespace XML_Editor
 
         private void button4_Click(object sender, EventArgs e)
         {
+            richTextBox2.WordWrap = true;
             json = false;
             richTextBox1.Clear();
             richTextBox1.AppendText(output);
@@ -50,6 +51,7 @@ namespace XML_Editor
             string decompressed = "";
             if (openFileDialog2.ShowDialog() == DialogResult.OK)
             {
+                richTextBox2.WordWrap = false;
                 List<byte> bytes = new List<byte>();
                 using (BinaryReader binReader = new BinaryReader(File.Open(openFileDialog2.FileName, FileMode.Open)))
                 {
@@ -82,6 +84,7 @@ namespace XML_Editor
 
         private void button2_Click(object sender, EventArgs e)
         {
+            richTextBox2.WordWrap = false;
             json = false;
             richTextBox1.Clear();
             richTextBox1.AppendText(output);
@@ -91,6 +94,7 @@ namespace XML_Editor
 
         private void button3_Click(object sender, EventArgs e)
         {
+            richTextBox2.WordWrap = false;
             json = true;
             richTextBox1.Clear();
             richTextBox1.AppendText(output);
@@ -114,6 +118,7 @@ namespace XML_Editor
             errors = 0;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                richTextBox2.WordWrap = false;
                 string file = openFileDialog1.FileName;
                 try
                 {
