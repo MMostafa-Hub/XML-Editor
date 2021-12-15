@@ -94,11 +94,6 @@ namespace XML_Editor
                                 output += "<" + "/" + st.Peek() + ">" + "\n";
                                 st.Pop();
                             }
-                            else
-                            {
-                                errors++;
-                            }
-                            
 
                         }
                         index = close;
