@@ -173,6 +173,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(189, 39);
+            this.label3.MaximumSize = new System.Drawing.Size(300, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 11;

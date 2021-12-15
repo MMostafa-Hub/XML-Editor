@@ -73,21 +73,32 @@ namespace XML_Editor
                         int slash = findChar(s, index, '/');
                         int close = findChar(s, index, '>');
                         string str = s.Substring(slash + 1, close - slash - 1);
-                        if (str == st.Peek())
-                        { //no error
-                            output += "<" + "/" + st.Peek() + ">";
-                            st.Pop();
+                        if (st.Contains(str))
+                        {
+                            if (str == st.Peek())
+                            { //no error
+                                output += "<" + "/" + st.Peek() + ">";
+                                st.Pop();
+                            }
                         }
                         else
                         { //error
-                            while (str != st.Peek())
+                            if (st.Contains(str))
                             {
+                                while (str != st.Peek())
+                                {
+                                    output += "<" + "/" + st.Peek() + ">" + "\n";
+                                    st.Pop();
+                                    errors++;
+                                }
                                 output += "<" + "/" + st.Peek() + ">" + "\n";
                                 st.Pop();
+                            }
+                            else
+                            {
                                 errors++;
                             }
-                            output += "<" + "/" + st.Peek() + ">" + "\n";
-                            st.Pop();
+                            
 
                         }
                         index = close;
