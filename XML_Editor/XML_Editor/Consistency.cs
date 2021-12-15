@@ -154,6 +154,7 @@ namespace XML_Editor
                 if (s[index] == ' ')
                 {
                     output += s[index];
+                    index++;
                 }
 
             }
