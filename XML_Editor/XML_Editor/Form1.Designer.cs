@@ -44,6 +44,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.label3 = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -175,16 +176,25 @@
             this.label3.Location = new System.Drawing.Point(189, 39);
             this.label3.MaximumSize = new System.Drawing.Size(300, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 11;
-            this.label3.Text = "label3";
             this.label3.Visible = false;
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(180, 13);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
+            this.richTextBox3.Size = new System.Drawing.Size(404, 74);
+            this.richTextBox3.TabIndex = 12;
+            this.richTextBox3.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1410, 597);
+            this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -225,5 +235,6 @@
         private Button button7;
         private OpenFileDialog openFileDialog2;
         private Label label3;
+        private RichTextBox richTextBox3;
     }
 }

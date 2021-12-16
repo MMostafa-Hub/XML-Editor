@@ -8,7 +8,7 @@ namespace XML_Editor
 {
     internal class Consistency
     {
-        public static string checkConsistency(string s, ref int errors)
+        public static string checkConsistency(string s, ref int errors, List<string> errorsDetails)
         {
             Stack<string> st = new Stack<string>();
             string output = "";
@@ -90,11 +90,16 @@ namespace XML_Editor
                                     output += "<" + "/" + st.Peek() + ">" + "\n";
                                     st.Pop();
                                     errors++;
+                                    errorsDetails.Add("Missing " + str + " opening tag");
                                 }
                                 output += "<" + "/" + st.Peek() + ">" + "\n";
                                 st.Pop();
                             }
-
+                            else
+                            {
+                                errors++;
+                                errorsDetails.Add("Missing " + str + " opening tag");
+                            }
                         }
                         index = close;
                         index++;
@@ -130,6 +135,7 @@ namespace XML_Editor
                     }
                     else
                     {
+                        errorsDetails.Add("Missing " + st.Peek() + " closing tag");
                         output += "</" + st.Peek() + ">" + "\n";
                         st.Pop();
                         errors++;

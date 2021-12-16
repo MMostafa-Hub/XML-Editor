@@ -9,6 +9,7 @@ namespace XML_Editor
         string input, output;
         bool json = false;
         int errors = 0;
+        List<string> errorsDetails = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -116,6 +117,7 @@ namespace XML_Editor
         {
             json = false;
             errors = 0;
+            errorsDetails.Clear();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 richTextBox2.WordWrap = false;
@@ -126,7 +128,7 @@ namespace XML_Editor
                     richTextBox1.Clear();
                     richTextBox1.AppendText(input);
                     richTextBox2.Clear();
-                    output = Consistency.checkConsistency(input, ref errors);
+                    output = Consistency.checkConsistency(input, ref errors, errorsDetails);
                     richTextBox2.AppendText(output);
                     root = ParseToTree.ParsingToTree(output);
                     button2.Enabled = true;
@@ -139,9 +141,13 @@ namespace XML_Editor
                 catch (IOException)
                 {
                 }
-                if (errors > 0) label3.Text = errors + " errors were detected and corrected";
-                else label3.Text = "File imported successfully";
-                label3.Visible = true;
+                if (errors > 0) {
+                    richTextBox3.Text = errors + " errors were detected and corrected\n";
+                    foreach (string error in errorsDetails) { 
+                        richTextBox3.AppendText(error + "\n");
+                    }
+                } 
+                else richTextBox3.Text = "File imported successfully";
             }
         }
     }
