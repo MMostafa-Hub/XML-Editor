@@ -181,7 +181,7 @@ namespace XML_Editor
             for (int i = index; i < s.Length; i++) {
                 if (a == s[i])
                     return i;
-                //if (s[i] == '\n') line++;
+                if (s[i] == '\n') line++;
             }
             return -1;  
         }
