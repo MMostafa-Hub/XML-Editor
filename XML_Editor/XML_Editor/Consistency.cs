@@ -98,7 +98,7 @@ namespace XML_Editor
                             }
                             else
                             {
-                                //errors++;
+                                errors++;
                                 errorsDetails.Add("Missing opening tag for " + str + " near line " + line + " (removed)");
                             }
                         }
