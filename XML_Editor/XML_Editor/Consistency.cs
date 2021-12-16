@@ -16,6 +16,7 @@ namespace XML_Editor
             errors = 0;
             bool flagfollower = false;
             bool flagendtagfollower = false;
+            int line = 1;
             while (index < s.Length)
             {
                 if (s[index] == '<')
@@ -90,7 +91,7 @@ namespace XML_Editor
                                     output += "<" + "/" + st.Peek() + ">" + "\n";
                                     st.Pop();
                                     errors++;
-                                    errorsDetails.Add("Missing " + str + " opening tag");
+                                    errorsDetails.Add("Missing " + str + " opening tag at line " + line);
                                 }
                                 output += "<" + "/" + st.Peek() + ">" + "\n";
                                 st.Pop();
@@ -98,7 +99,7 @@ namespace XML_Editor
                             else
                             {
                                 errors++;
-                                errorsDetails.Add("Missing " + str + " opening tag");
+                                errorsDetails.Add("Missing " + str + " opening tag at line " + line);
                             }
                         }
                         index = close;
@@ -135,7 +136,7 @@ namespace XML_Editor
                     }
                     else
                     {
-                        errorsDetails.Add("Missing " + st.Peek() + " closing tag");
+                        errorsDetails.Add("Missing " + st.Peek() + " closing tag at line " + line);
                         output += "</" + st.Peek() + ">" + "\n";
                         st.Pop();
                         errors++;
@@ -146,6 +147,7 @@ namespace XML_Editor
                 {
                     output += "\n";
                     index++;
+                    line++;
                     while (s[index] == ' ')
                     {
                         output += s[index];
