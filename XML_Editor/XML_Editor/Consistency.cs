@@ -21,11 +21,11 @@ namespace XML_Editor
             {
                 if (s[index] == '<')
                 {
-                    int open = findChar(s, index, '<');
+                    int open = findChar(s, index, '<', ref line);
                     if (s[open + 1] != '/')
                     { //openning tag 
 
-                        int close = findChar(s, open + 1, '>');
+                        int close = findChar(s, open + 1, '>', ref line);
                         string str = s.Substring(open + 1, close - open - 1);//without <>
                         if (str == "follower")
                         {
@@ -71,8 +71,8 @@ namespace XML_Editor
 
                     else
                     { //closing tag
-                        int slash = findChar(s, index, '/');
-                        int close = findChar(s, index, '>');
+                        int slash = findChar(s, index, '/', ref line);
+                        int close = findChar(s, index, '>', ref line);
                         string str = s.Substring(slash + 1, close - slash - 1);
                         if (st.Contains(str))
                         {
@@ -91,15 +91,15 @@ namespace XML_Editor
                                     output += "<" + "/" + st.Peek() + ">" + "\n";
                                     st.Pop();
                                     errors++;
-                                    errorsDetails.Add("Missing " + str + " opening tag at line " + line);
+                                    errorsDetails.Add("Missing opening tag for " + str + " near line " + line);
                                 }
                                 output += "<" + "/" + st.Peek() + ">" + "\n";
                                 st.Pop();
                             }
                             else
                             {
-                                errors++;
-                                errorsDetails.Add("Missing " + str + " opening tag at line " + line);
+                                //errors++;
+                                errorsDetails.Add("Missing opening tag for " + str + " near line " + line + " (removed)");
                             }
                         }
                         index = close;
@@ -110,13 +110,13 @@ namespace XML_Editor
 
                 if (s[index] != '<' && s[index] != '\n' && s[index] != ' ' && s[index] != '\r')
                 { //data
-                    int open = findChar(s, index, '<');
+                    int open = findChar(s, index, '<', ref line);
                     int length = open - index;
                     output += s.Substring(index, length);
                     index = open - 1;
                     index++;
                     string check = st.Peek();
-                    int start = findChar(s, index, '<');
+                    int start = findChar(s, index, '<', ref line);
                     if (check == s.Substring(start + 2, st.Peek().Length))
                     {
                         output += "</" + st.Peek() + ">";
@@ -126,8 +126,8 @@ namespace XML_Editor
                     else if (flagendtagfollower)
                     {
 
-                        int openflag = findChar(s, index, '<');
-                        int closeflag = findChar(s, index, '>');
+                        int openflag = findChar(s, index, '<', ref line);
+                        int closeflag = findChar(s, index, '>', ref line);
                         int lengthflag = closeflag - openflag + 1;
                         index = index + lengthflag;
                         output += "</id>";
@@ -136,7 +136,7 @@ namespace XML_Editor
                     }
                     else
                     {
-                        errorsDetails.Add("Missing " + st.Peek() + " closing tag at line " + line);
+                        errorsDetails.Add("Missing closing tag for " + st.Peek() + " near line " + line + " (added)");
                         output += "</" + st.Peek() + ">" + "\n";
                         st.Pop();
                         errors++;
@@ -177,10 +177,11 @@ namespace XML_Editor
             return output;
 
         }
-        static int findChar(string s,int index,char a) {
+        static int findChar(string s,int index,char a, ref int line) {
             for (int i = index; i < s.Length; i++) {
                 if (a == s[i])
                     return i;
+                //if (s[i] == '\n') line++;
             }
             return -1;  
         }

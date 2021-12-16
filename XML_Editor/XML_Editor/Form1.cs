@@ -142,7 +142,7 @@ namespace XML_Editor
                 {
                 }
                 if (errors > 0) {
-                    richTextBox3.Text = errors + " errors were detected and corrected\n";
+                    richTextBox3.Text = errors + " total errors were detected and corrected\nThis is a list of actions taken:\n";
                     foreach (string error in errorsDetails) { 
                         richTextBox3.AppendText(error + "\n");
                     }
