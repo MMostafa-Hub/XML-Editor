@@ -20,17 +20,27 @@ namespace XML_Editor
 
             /* Base Case */
             /* if it's a leaf NODE */
-            if (node.getChildren().Count == 0) return indentations + "\"" + node.getTag() + "\" : \"" + node.getData() + "\"";
+            if (node.getChildren().Count == 0)
+            {
+                /* if the node's parent is an Array then we should print only the value */
+                if (isArray(node.getParent()))
+                    return indentations + "\"" + node.getData() + "\"";
+                else
+                    return indentations + "\"" + node.getTag() + "\" : \"" + node.getData() + "\"";
+            }
 
 
             /* Case if it's a non-leaf NODE */
 
             /* if the node is an ARRAY then the prackets should be square '[' else it should be curly '{' */
-            /* the node is an ARRAY if all of its chilren's value is null */
+            /* the node is an ARRAY if all of its chilren's Tag are same */
             char bracket = isArray(node) ? '[' : '{';
 
+            /* If the Node is not a leaf and its Parent is an Array */
+            /* Then we shouldn't print the tag */
+            string str = isArray(node.getParent()) ? indentations + bracket + "\n" : indentations + "\"" + node.getTag() + "\": " + bracket + "\n";
+
             /* RECURSION */
-            string str = indentations + "\"" + node.getTag() + "\": " + bracket + "\n";
             for (int i = 0; i < node.getChildren().Count; i++)
             {
                 /* recursos on the children of the node */
@@ -53,12 +63,18 @@ namespace XML_Editor
          * input: node
          * output: boolean, if the node is array it returns true else it will returns false
          */
-        public static bool isArray(Node node)
+        public static bool isArray(Node? node)
         {
-            /* it loops over the node's children if one of the children does have a value then the node isn't an array*/
-            for (int i = 0; i < node.getChildren().Count; i++)
+            /* If the nodes is null or The Children Count is equal to 1 it return False*/
+            if (node == null || node.getChildren().Count() == 1) return false;
+
+            string? refrenceTag = node.getChildren()[0].getTag();
+
+            /* it loops over the node's children */
+            /* if one of the children does have a Tag differnt from the Refrence Taf it return False */
+            foreach (Node child in node.getChildren())
             {
-                if (node.getChildren()[i].getData() != null)
+                if (child.getTag() != refrenceTag)
                     return false;
             }
             return true;
