@@ -170,6 +170,7 @@ namespace XML_Editor
             {
                 while (st.Count != 0)
                 {
+                    errorsDetails.Add("Missing closing tag for " + st.Peek() + " near line " + line + " (added)");
                     output += "</" + st.Peek() + ">";
                     st.Pop();
                 }
