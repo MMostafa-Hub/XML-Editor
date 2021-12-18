@@ -173,6 +173,7 @@ namespace XML_Editor
                     errorsDetails.Add("Missing closing tag for " + st.Peek() + " near line " + line + " (added)");
                     output += "</" + st.Peek() + ">";
                     st.Pop();
+                    errors++;
                 }
             }
             return output;
