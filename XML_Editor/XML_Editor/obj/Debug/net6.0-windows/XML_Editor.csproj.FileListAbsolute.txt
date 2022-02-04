@@ -49,3 +49,8 @@ C:\E_But_FAST\SENIOR_1\CSE331_DSA_Drive\PROJECT\XML-Editor\XML_Editor\XML_Editor
 C:\E_But_FAST\SENIOR_1\CSE331_DSA_Drive\PROJECT\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\ref\XML_Editor.dll
 C:\E_But_FAST\SENIOR_1\CSE331_DSA_Drive\PROJECT\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.pdb
 C:\E_But_FAST\SENIOR_1\CSE331_DSA_Drive\PROJECT\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.genruntimeconfig.cache
+G:\ASU\CSE-3\DS\XML-Editor\XML_Editor\XML_Editor\bin\Debug\net6.0-windows\AutomaticGraphLayout.dll
+G:\ASU\CSE-3\DS\XML-Editor\XML_Editor\XML_Editor\bin\Debug\net6.0-windows\AutomaticGraphLayout.Drawing.dll
+G:\ASU\CSE-3\DS\XML-Editor\XML_Editor\XML_Editor\bin\Debug\net6.0-windows\Microsoft.Msagl.GraphViewerGdi.dll
+G:\ASU\CSE-3\DS\XML-Editor\XML_Editor\XML_Editor\bin\Debug\net6.0-windows\Microsoft.Msagl.WpfGraphControl.dll
+G:\ASU\CSE-3\DS\XML-Editor\XML_Editor\XML_Editor\obj\Debug\net6.0-windows\XML_Editor.csproj.CopyComplete

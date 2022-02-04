@@ -115,7 +115,36 @@ namespace XML_Editor
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+            Microsoft.Msagl.Drawing.Graph graph = new Microsoft.Msagl.Drawing.Graph("graph");
+            System.Windows.Forms.Form form = new System.Windows.Forms.Form();
+            foreach (Node user in root.getChildren())
+            {
+                string userId = "";
+                foreach (Node property in user.getChildren())
+                {
+                    if (property.getTag() == "id") {
+                        userId = property.getData();
+                        break;
+                    }
+                }
+                foreach (Node property in user.getChildren())
+                {
+                    if (property.getTag() == "followers")
+                    {
+                        foreach (Node follower in property.getChildren())
+                        {
+                            graph.AddEdge(userId, follower.getChildren()[0].getData());
+                        }
+                    }
+                }
+            }
+            viewer.Graph = graph;
+            form.SuspendLayout();
+            viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            form.Controls.Add(viewer);
+            form.ResumeLayout();
+            form.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
