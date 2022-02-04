@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ZU2O3IsFdEskch/OtgF/7hGOG4Pgns+e37nBtZkdLUdBtVBCdRJ0JwA3teLbpLcbTHmEBao9Ou6lrBHJWLb3uQ==",
+  "dgSpecHash": "l+lBITWnSPtWd19x1dQU3faj4bnuL8uQkJilnKcKlS0SqYBbb+2DHdURjmaL7/SVjkxcvkEYrGWg/XE7JRU4NQ==",
   "success": true,
   "projectFilePath": "G:\\ASU\\CSE-3\\DS\\XML-Editor\\XML_Editor\\XML_Editor\\XML_Editor.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Dell\\.nuget\\packages\\automaticgraphlayout\\1.1.12\\automaticgraphlayout.1.1.12.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\automaticgraphlayout.drawing\\1.1.12\\automaticgraphlayout.drawing.1.1.12.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\automaticgraphlayout.graphviewergdi\\1.1.12\\automaticgraphlayout.graphviewergdi.1.1.12.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\automaticgraphlayout.wpfgraphcontrol\\1.1.12\\automaticgraphlayout.wpfgraphcontrol.1.1.12.nupkg.sha512"
+  ],
   "logs": []
 }
