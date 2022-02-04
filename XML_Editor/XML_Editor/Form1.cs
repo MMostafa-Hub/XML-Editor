@@ -113,6 +113,11 @@ namespace XML_Editor
             }
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             json = false;
@@ -137,6 +142,7 @@ namespace XML_Editor
                     button5.Enabled = true;
                     button6.Enabled = true;
                     button7.Enabled = true;
+                    button8.Enabled = true;
                 }
                 catch (IOException)
                 {
