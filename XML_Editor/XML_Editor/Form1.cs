@@ -125,6 +125,7 @@ namespace XML_Editor
                 {
                     if (property.getTag() == "id") {
                         userId = property.getData();
+                        graph.AddNode(new Microsoft.Msagl.Drawing.Node(userId));
                         break;
                     }
                 }
